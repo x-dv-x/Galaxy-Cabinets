@@ -1,14 +1,3 @@
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 50) {
-    document.getElementById("navbar").style.padding = "20px 10px";
-    document.getElementById("logo").style.fontSize = "25px";
-  } else {
-    document.getElementById("navbar").style.padding = "0px 0px";
-    document.getElementById("logo").style.fontSize = "25px";
-  }
-} 
 document.addEventListener('DOMContentLoaded', function() {
   const orderbtn = document.getElementById('order-btn');
   orderbtn.addEventListener('click', function() {
@@ -24,3 +13,33 @@ worksbtn.addEventListener('click',function(){
   worksection.scrollIntoView({behavior: "smooth"});
 })
 }); 
+
+$(document).ready(function() {
+  $('.testimonial-slider').slick({
+      autoplay: true,
+      autoplaySpeed: 1000,
+      speed: 600,
+      draggable: true,
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      arrows: false,
+      dots: true,
+      responsive: [
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+            }
+          },
+          {
+              breakpoint: 575,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              }
+          }
+      ]
+  });
+});
